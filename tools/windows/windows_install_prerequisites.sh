@@ -47,7 +47,7 @@ pip install pyserial
 TOOLCHAIN_ZIP=xtensa-esp32-elf-win32-1.22.0-80-g6c4433a-5.2.0.zip
 echo "Downloading precompiled toolchain ${TOOLCHAIN_ZIP}..."
 cd ~
-curl -LO --retry 10 http://dl.espressif.com/dl/${TOOLCHAIN_ZIP}
+curl --insecure -LO --retry 10 http://dl.espressif.com/dl/${TOOLCHAIN_ZIP}
 cd /opt
 rm -rf /opt/xtensa-esp32-elf  # for upgrades
 unzip ~/${TOOLCHAIN_ZIP}

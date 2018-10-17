@@ -211,6 +211,7 @@ int mbedtls_internal_sha256_process( mbedtls_sha256_context *ctx, const unsigned
     if (ctx->mode == ESP_MBEDTLS_SHA256_UNUSED) {
         /* try to use hardware for this digest */
         if (!ctx->is224 && esp_sha_try_lock_engine(SHA2_256)) {
+			hash_calls += 1;
             ctx->mode = ESP_MBEDTLS_SHA256_HARDWARE;
             first_block = true;
         } else {

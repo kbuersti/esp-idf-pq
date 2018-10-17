@@ -185,7 +185,7 @@ static int create_ssl_handle(esp_tls_t *tls, const char *hostname, size_t hostle
     }
 
     if (cfg->alpn_protos) {
-        mbedtls_ssl_conf_alpn_protocols(&tls->conf, cfg->alpn_protos);
+        //mbedtls_ssl_conf_alpn_protocols(&tls->conf, cfg->alpn_protos);
     }
 
     if (cfg->cacert_pem_buf != NULL) {
